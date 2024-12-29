@@ -1,6 +1,6 @@
 import orderModel from "../models/orderModel.js"
 import userModel from '../models/userModel.js'
-import Stripe from 'Stripe'
+import Stripe from 'stripe'
 
 // global variables
 const currency = 'inr'
@@ -39,6 +39,7 @@ const placeOrder = async (req, res) => {
 // placing order using stripe method
 const placeOrderStripe = async (req,res)=>{
    try {
+    console.log(Stripe)
     const { userId, items, amount, address } = req.body;
     const {origin} = req.headers
 
